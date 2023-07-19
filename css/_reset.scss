@@ -29,7 +29,7 @@ img {
 body {
     line-height: 1;
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    letter-spacing: -0.025em;
+    // letter-spacing: -0.025em;
     word-break: keep-all;
     color: $color-body;
 }
@@ -48,11 +48,12 @@ body {
 }
 
 ._section {
-    padding: 100px 0;
+    padding: 100px 0 0 0;
 
     .title {
         @include inner();
-        margin: 0 auto 30px auto;
+        margin: 0 auto 40px auto;
+
 
         strong {
             display: block;

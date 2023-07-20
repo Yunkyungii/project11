@@ -73,6 +73,7 @@ body {
         .desc {
             font-size: 18px;
             font-weight: 300;
+            line-height: 1.2;
         }
 
 
@@ -82,6 +83,25 @@ body {
             font-weight: 500;
             padding: 15px 40px;
             border: 1px solid $color-body;
+        }
+
+        @media (max-width: 768px) {
+            strong {
+                font-size: 16px;
+                margin: 0 0 32px 0;
+            }
+
+            h2 {
+                font-size: 32px;
+                margin: 0 0 24px 0;
+                color: $color-dc;
+            }
+
+            .desc {
+                font-size: 15px;
+                font-weight: 300;
+            }
+
         }
     }
 }

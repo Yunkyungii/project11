@@ -1,0 +1,74 @@
+.main_benefit {
+    position: relative;
+    overflow: hidden;
+
+    .title {
+        p {
+            margin: 0 0 32px 0;
+        }
+    }
+
+    .bg02 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 860px;
+        height: 860px;
+        background: url(../images/maincon1-top-deco1.png)no-repeat 0 0;
+        background-size: 100% 100%;
+        z-index: -1;
+    }
+
+    .benefit_slide {
+        left: calc((100% - 1200px)/2 + 15px);
+
+
+        figure {
+            .img_box {
+                margin: 0 0 24px 0;
+                height: 383px;
+                position: relative;
+
+
+                img {
+                    height: 100%;
+                }
+
+            }
+
+            h3 {
+                font-size: 20px;
+                text-align: center;
+                font-weight: 500;
+            }
+
+        }
+
+    }
+
+    @media(max-width:768px) {
+        .benefit_slide {
+
+            left: 0;
+
+            figure {
+                .img_box {
+                    height: 280px;
+
+                    img {
+                        height: 100%;
+                    }
+
+                }
+
+                h3 {
+                    font-size: 16px;
+                }
+
+            }
+
+        }
+    }
+
+
+}

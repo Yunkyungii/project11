@@ -1,0 +1,175 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: .5s;
+
+    &:hover {
+        background: $color-white;
+
+        .header_container {
+            color: $color-dc;
+
+            h1 {
+                background: url(../images/logo-red.png) no-repeat center center/contain;
+            }
+
+        }
+    }
+
+    &.on {
+        background: $color-white;
+        border-bottom: 1px solid $color-l;
+
+        .header_container {
+            color: $color-dc;
+
+            h1 {
+                background: url(../images/logo-red.png) no-repeat center center/contain;
+            }
+        }
+    }
+
+    .header_container {
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-white;
+        padding: 0 60px;
+
+
+        h1 {
+            width: 203px;
+            height: 36px;
+            background: url(../images/logo-wht.png) no-repeat center center/contain;
+
+            &.on {
+                background: url(../images/logo-red.png) no-repeat center center/contain;
+            }
+        }
+
+        .gnb {
+            .dth1 {
+                display: flex;
+                gap: 50px;
+
+                li {
+                    text-align: center;
+
+                    a {
+                        line-height: 100px;
+                        display: block;
+                        width: 75px;
+                        position: relative;
+                        font-size: 20px;
+                        font-weight: 500;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: -1px;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                            width: 0;
+                            height: 3px;
+                            background: $color-main;
+                            transition: width .4s;
+                        }
+
+                        &:hover::after {
+                            width: 100%;
+                        }
+
+                    }
+
+                    .dth2 {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .service {
+            display: flex;
+            gap: 16px;
+            text-align: center;
+
+            i {
+                display: block;
+                font-size: 20px;
+                margin: 0 0 8px 0;
+            }
+        }
+
+    }
+
+    .mo_btn {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+
+        .header_container {
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 15px;
+
+            .gnb {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                z-index: 999;
+
+                background: $color-white;
+                height: 100vh;
+                width: calc(100% - 90px);
+
+                padding: 100px 24px 0 0;
+                transition: left .5s;
+
+                .dth1 {
+                    flex-direction: column;
+                    gap: 0;
+                    padding: 16px;
+                    background: #ddd;
+                    height: 100%;
+
+                    >li {
+                        position: relative;
+
+
+                        a {
+                            display: block;
+                            line-height: 56px;
+                            font-size: 18px;
+                        }
+                    }
+
+                }
+
+                &.on {
+                    left: 0;
+                }
+            }
+
+            .service {
+                display: none;
+            }
+
+        }
+
+        .mo_btn {
+            position: fixed;
+            right: 15px;
+            top: 115px;
+            display: block;
+            padding: 8px;
+            font-size: 24px;
+            background: $color-white;
+            border-radius: 4px;
+        }
+    }
+}

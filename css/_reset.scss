@@ -32,6 +32,7 @@ body {
     // letter-spacing: -0.025em;
     word-break: keep-all;
     color: $color-body;
+
 }
 
 .blind {
@@ -78,11 +79,7 @@ body {
 
 
         ._btn {
-            display: inline-block;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 15px 40px;
-            border: 1px solid $color-body;
+            @include btn();
         }
 
         @media (max-width: 768px) {
@@ -98,7 +95,7 @@ body {
             }
 
             .desc {
-                font-size: 15px;
+                font-size: 14px;
                 font-weight: 300;
             }
 

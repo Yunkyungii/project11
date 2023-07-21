@@ -67,8 +67,15 @@ $(function () {
 
     const BenefitSlide = new Swiper('.benefit_slide', {
         loop: true,
-        slidesPerView: 3,
-        spaceBetween: 32,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+            },
+        }
+
 
     });
 
@@ -84,8 +91,10 @@ $(function () {
     });
 
 
-
-
+    // 반응형
+    $('.mo_btn').on('click', function () {
+        $('.header .gnb').toggleClass('on');
+    });
 
 
 

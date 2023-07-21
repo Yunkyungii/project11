@@ -10,9 +10,10 @@ $size-gap : 30px;
 @mixin btn () {
     display: inline-block;
     font-size: 14px;
-    padding: 10px 25px;
+    font-weight: 500;
+    padding: $size-gap/2 40px;
     color: $color-dc;
-    border: 1px solid $color-dc;
+    border: 1px solid $color-body;
 }
 
 @mixin center () {

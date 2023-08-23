@@ -1,4 +1,4 @@
-.main_content {
+#main_content {
     position: relative;
     padding: 100px 0 0 0;
     overflow: hidden;
@@ -17,18 +17,15 @@
 
 
     .con_box {
-        position: relative;
-        height: 850px;
-        margin-left: 100%;
-        overflow: hidden;
-        width: 100%;
-        transition: 1s;
+        display: flex;
+        gap: 4px;
 
-        figure {
-            opacity: 0;
-            z-index: 1;
-            transition: 0.5s;
-
+        >figure {
+            position: relative;
+            flex: 1;
+            height: 480px;
+            padding: 80px 64px;
+            overflow: hidden;
 
             &::after {
                 content: "";
@@ -37,103 +34,60 @@
                 width: 100%;
                 height: 100%;
                 background-color: #000;
-                opacity: 0.55;
+                opacity: 0.3;
             }
 
-            &.on {
-                opacity: 1;
-                z-index: 3;
-            }
-        }
-
-        .img_box {
-            position: absolute;
-            inset: 0 0 0 0;
-
-
-            img {
-                height: 100%;
-                width: 100%;
+            &:nth-child(1) {
+                background: url(../images/maincon1-img1.jpg)no-repeat center center/cover;
             }
 
-        }
-
-
-    }
-
-    .con_list {
-        position: absolute;
-        top: 20%;
-        left: 100px;
-        display: flex;
-        gap: 16px;
-
-        li {
-            position: relative;
-            padding: 0 0 10px 0;
-            color: rgba($color-white, $alpha: 0.5);
-
-            &.on {
-                color: $color-white;
+            &:nth-child(2) {
+                background: url(../images/maincon1-img2.jpg)no-repeat center center/cover;
             }
 
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 1px;
-                background: $color-white;
-                transition: width 0.5s;
+            &:nth-child(3) {
+                background: url(../images/maincon1-img3.jpg)no-repeat center center/cover;
             }
 
-            &.on::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 1px;
-                background: $color-white;
+            .slogan {
+                position: relative;
+                z-index: 998;
+
+                strong {
+                    display: block;
+                    font-size: 40px;
+                    color: rgba($color-white, $alpha: 0.5);
+                    margin: 0 0 32px 0;
+                }
+
+                span {
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: rgba($color-white, $alpha: 0.8);
+                    visibility: hidden;
+                }
             }
-        }
-    }
 
+            &:hover {
+                flex: 5;
+                transition: 0.5s;
 
-    &.on {
+                &::after {
+                    opacity: 0.5;
+                }
 
-        .con_box {
-            margin-left: calc((100% - 1170px)/2);
-            // left: 50px;
-
-            figure {
                 .slogan {
-                    position: absolute;
-                    top: 50%;
-                    left: 100px;
-                    transform: translate(0, -50%);
-                    width: 500px;
-                    z-index: 998;
-
-
                     strong {
-                        display: block;
-                        font-size: 72px;
-                        font-weight: 300;
-                        margin: 0 0 32px 0;
                         color: $color-white;
                     }
 
                     span {
-                        font-size: 18px;
-                        line-height: 1.5;
-                        color: rgba($color-white, $alpha: 0.7);
+                        visibility: visible;
                     }
                 }
             }
-
         }
+
 
     }
 

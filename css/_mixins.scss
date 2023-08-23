@@ -2,9 +2,9 @@ $size-pc : 1200px;
 $size-gap : 30px;
 
 @mixin inner () {
-    max-width: $size-pc;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 $size-gap/2;
+    padding: 0 16px;
 }
 
 @mixin btn () {

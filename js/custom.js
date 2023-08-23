@@ -1,5 +1,24 @@
 $(function () {
 
+
+    $('#main').fullpage({
+        anchors: ['main', 'sub01', 'sub02'],
+        navigation: true,
+        css3: false,
+        responsiveWidth: 700,
+        'afterLoad': function (anchorLink, index) {
+            if (index == 1) {
+                $('#header').removeClass('on');
+            }
+        },
+        onLeave: function (idx, nidx, dir) {
+
+            if (dir == 'down') {
+                $('#header').addClass('on')
+            }
+        },
+    });
+
     $(window).on('scroll', function () {
         let sct = $(window).scrollTop();
         sct > 0
@@ -44,25 +63,39 @@ $(function () {
     })
 
 
-    $('.main_content .con_list li').on('click', function (e) {
+    //$('.main_content .con_list li').on('click', function (e) {
+    //    e.preventDefault();
+    //    let idx = $(this).index();
+    //    $('.con_box figure').eq(idx).addClass('on').siblings().removeClass('on');
+    //    $(this).addClass('on').siblings().removeClass('on');
+    //s});
+
+    $('.area_slide').slick({
+        arrows: false,
+        asNavFor: '.info_slide',
+    });
+
+    $('.tab>li').on('click', function (e) {
         e.preventDefault();
         let idx = $(this).index();
-        $('.con_box figure').eq(idx).addClass('on').siblings().removeClass('on');
+        $('.area_slide').slick('slickGoTo', idx);
         $(this).addClass('on').siblings().removeClass('on');
     });
 
-    const AreaSlide = new Swiper('.area_slide', {
-        loop: true,
-        effect: "fade",
+    $('.area_slide').on('init afterChange', function (e, s, c) {
+        const current = $('.area_slide .slick-current');
+        current.addClass('on').siblings().removeClass('on');
+        $('.tab>li').eq(0).addClass('on');
+        $('.tab>li').eq(c).addClass('on')
+            .siblings().removeClass('on');
     });
 
 
-    $('.area_info li').on('mouseenter', function (e) {
-        e.preventDefault();
-        const idx = $(this).index();
-        $(this).addClass('on').siblings().removeClass('on')
-        AreaSlide.slideTo(idx);
-    })
+    $('.info_slide').slick({
+        arrows: false,
+        asNavFor: '.area_slide',
+    });
+
 
 
     const BenefitSlide = new Swiper('.benefit_slide', {

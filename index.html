@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HILLSTATE - 박윤경</title>
     <link rel="stylesheet" href="./css/style.css?ver=1.0">
+    <link rel="stylesheet" href="./css/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="./css/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery.fullpage.min.js"></script>
+    <script src="./js/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="./js/custom.js?ver=1.0"></script>
+    <script src="./js/custom.js?ver=1.0" defer></script>
 </head>
 
 <body>
     <div class="wrap">
-        <header class="header">
+        <header id="header">
             <div class="header_container">
                 <h1><a href="/"><span class="blind">logo</span></a></h1>
                 <nav class="gnb">
@@ -79,8 +83,8 @@
                 <i class="bi bi-list"></i>
             </div>
         </header>
-        <main class="main">
-            <section class="main_visual">
+        <main id="main" class="main">
+            <section id="main_visual" class="section">
                 <h2 class="blind">메인비주얼</h2>
                 <div class="main_slide swiper">
                     <div class="swiper-wrapper">
@@ -125,7 +129,7 @@
                     <span>scroll to explore</span>
                 </div>
             </section>
-            <section class="_section main_content  scr_ev">
+            <section id="main_content" class="section">
                 <div class="bg01"><span class="blind">deco background01</span></div>
 
                 <div class="title">
@@ -135,144 +139,135 @@
                     <p class="desc">대한민국 라이프스타일을 주도해 온 현대건설(주)은 단순한 주거공간을 넘어
                         새로운 라이프스타일을 창조하는 ‘라이프스타일 리더’로 거듭나고자 합니다.</p>
                 </div>
-
-                <div class="con_box">
-                    <figure class=" on">
-                        <div class="img_box">
-                            <img src="./images/maincon1-img1.jpg" alt="">
-                        </div>
-                        <div class="slogan">
-                            <strong>Stylish
-                                Life</strong>
-                            <span>힐스테이트는 단순한 주거공간을 넘어 라이프스타일을 창조하는
-                                라이프스타일의 리더로서 일상의 곳곳에서 아름다움을 느낄 수 있도록
-                                남다른 시각으로 세련된 삶의 공간을 창조합니다.</span>
-                        </div>
-                    </figure>
-                    <figure>
-                        <div class="img_box">
-                            <img src="./images/maincon1-img2.jpg" alt="">
-                        </div>
-                        <div class="slogan">
-                            <strong>Various
-                                Life</strong>
-                            <span>대한민국의 대표 주거 브랜드인 힐스테이트는 고객의 일상에
-                                건강하고 기분 좋은 변화를 만들고 다양한 삶의 방식이 조화가
-                                될 수 있도록 다채로운 삶의 경험을 제공합니다.</span>
-                        </div>
-                    </figure>
-                    <figure>
-                        <div class="img_box">
-                            <img src="./images/maincon1-img3.jpg" alt="">
-                        </div>
-                        <div class="slogan">
-                            <strong>Comfortable
-                                Life</strong>
-                            <span>현대 힐스테이트는 편리하고 편안한 생활을 제공하기 위해
-                                업계최고의 기술력을 바탕으로 고객과 소통하며
-                                최고의 주거가치를 실현하기 위해 노력하고 있습니다.</span>
-                        </div>
-                    </figure>
-                    <ul class="con_list">
-                        <li class="on"><a href="">STYLISH </a></li>
-                        <li><a href="">VARIOUS</a></li>
-                        <li><a href="">COMFORTABLE</a></li>
-                    </ul>
+                <div class="inner">
+                    <div class="con_box">
+                        <figure>
+                            <div class="slogan">
+                                <strong>Stylish
+                                    Life</strong>
+                                <span>힐스테이트는 단순한 주거공간을 넘어 라이프스타일을 창조하는
+                                    라이프스타일의 리더로서 일상의 곳곳에서 아름다움을 느낄 수 있도록
+                                    남다른 시각으로 세련된 삶의 공간을 창조합니다.</span>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="slogan">
+                                <strong>Various
+                                    Life</strong>
+                                <span>대한민국의 대표 주거 브랜드인 힐스테이트는 고객의 일상에
+                                    건강하고 기분 좋은 변화를 만들고 다양한 삶의 방식이 조화가
+                                    될 수 있도록 다채로운 삶의 경험을 제공합니다.</span>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="slogan">
+                                <strong>Comfortable
+                                    Life</strong>
+                                <span>현대 힐스테이트는 편리하고 편안한 생활을 제공하기 위해
+                                    업계최고의 기술력을 바탕으로 고객과 소통하며
+                                    최고의 주거가치를 실현하기 위해 노력하고 있습니다.</span>
+                            </div>
+                        </figure>
+                    </div>
                 </div>
 
 
 
 
+
             </section>
 
-            <section class="main_area">
-                <h2>SPECIAL NOW</h2>
-                <div class="area_slide swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide itm itm01">
-                            <div class="m_box">
-                                <p>분양예정</p>
-                                <h3>힐스테이트 신용 더리버 </h3>
+            <section id="main_area" class="section">
+                <div class="tab_area">
+                    <ul class="tab">
+                        <li><a href=""><img src="./images/mainarea01.jpg" alt=""></a></li>
+                        <li><a href=""><img src="./images/mainarea02.jpg" alt=""></a></li>
+                        <li><a href=""><img src="./images/mainarea03.jpg" alt=""></a></li>
+                        <li><a href=""><img src="./images/mainarea04.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="area_content">
+                    <div class="left">
+                        <div class="area_slide">
+                            <div class="itm itm01">
+                                <span class="blind">01</span>
+                            </div>
+                            <div class="itm itm02">
+                                <span class="blind">02</span>
+                            </div>
+                            <div class="itm itm03">
+                                <span class="blind">03</span>
+                            </div>
+                            <div class="itm itm04">
+                                <span class="blind">04</span>
                             </div>
                         </div>
-                        <div class="swiper-slide itm itm02">
-                            <div class="m_box">
-                                <p>분양중</p>
-                                <h3>힐스테이트 DMC역 </h3>
-                            </div>
-                        </div>
-                        <div class="swiper-slide itm itm03">
-                            <div class="m_box">
-                                <p>분양중</p>
-                                <h3>힐스테이트 동탄역 센트릭 </h3>
-                            </div>
-                        </div>
-                        <div class="swiper-slide itm itm04">
-                            <div class="m_box">
-                                <p>분양중</p>
-                                <h3>힐스테이트 대명 센트럴 2차 </h3>
-                            </div>
+                    </div>
+                    <div class="right">
+                        <h2>SPECIAL NOW</h2>
+                        <div class="area_info">
+                            <ul class="info_slide">
+                                <li> <a href="">
+                                        <div class="area_tit">
+                                            <p>분양예정</p>
+                                            <h3>힐스테이트 신용 더리버 </h3>
+                                        </div>
+                                        <ul class="cover_box">
+                                            <li><strong>분양시기</strong><span>7월</span></li>
+                                            <li><strong>위치</strong><span>광주광역시 북구 신용동 82-1번</span></li>
+                                            <li><strong>세대수</strong><span>1,647세대 (일반분양 206세대)</span></li>
+                                            <li><strong>문의전화</strong><span>02-375-5600</span></li>
+                                        </ul>
+                                    </a>
+                                </li>
+                                <li> <a href="">
+                                        <div class="area_tit">
+                                            <p>분양중</p>
+                                            <h3>힐스테이트 DMC역 </h3>
+                                        </div>
+                                        <ul class="cover_box">
+                                            <li><strong>분양시기</strong><span>2022년 11월 25일</span></li>
+                                            <li><strong>위치</strong><span>서울특별시 은평구 증산동 223-15</span></li>
+                                            <li><strong>세대수</strong><span>299세대</span></li>
+                                            <li><strong>문의전화</strong><span>02-375-5600</span></li>
+                                        </ul>
+                                    </a>
+                                </li>
+                                <li> <a href="">
+                                        <div class="area_tit">
+                                            <p>분양중</p>
+                                            <h3>힐스테이트 동탄역 센트릭 </h3>
+                                        </div>
+                                        <ul class="cover_box">
+                                            <li><strong>분양시기</strong><span>2022년 9월 20일</span></li>
+                                            <li><strong>위치</strong><span>경기도 화성시 오산동 981-1</span></li>
+                                            <li><strong>세대수</strong><span>400실</span></li>
+                                            <li><strong>문의전화</strong><span>1811-9812</span></li>
+                                        </ul>
+                                    </a>
+                                </li>
+                                <li> <a href="">
+                                        <div class="area_tit">
+                                            <p>분양중</p>
+                                            <h3>힐스테이트 대명 센트럴 2차 </h3>
+                                        </div>
+                                        <ul class="cover_box">
+                                            <li><strong>분양시기</strong><span>2022년 07월</span></li>
+                                            <li><strong>위치</strong><span>대구 남구 대명동 202-1</span></li>
+                                            <li><strong>세대수</strong><span>아파트 977세대, 오피스텔 266실</span></li>
+                                            <li><strong>문의전화</strong><span>1533-3050</span></li>
+                                        </ul>
+                                    </a>
+                                </li>
+
+                            </ul>
                         </div>
 
                     </div>
-                    <ul class="area_info">
-                        <li> <a href="">
-                                <div class="area_tit">
-                                    <p>분양예정</p>
-                                    <h3>힐스테이트 신용 더리버 </h3>
-                                </div>
-                                <ul class="cover_box">
-                                    <li><strong>분양시기</strong><span>7월</span></li>
-                                    <li><strong>위치</strong><span>광주광역시 북구 신용동 82-1번</span></li>
-                                    <li><strong>세대수</strong><span>1,647세대 (일반분양 206세대)</span></li>
-                                    <li><strong>문의전화</strong><span>02-375-5600</span></li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li> <a href="">
-                                <div class="area_tit">
-                                    <p>분양중</p>
-                                    <h3>힐스테이트 DMC역 </h3>
-                                </div>
-                                <ul class="cover_box">
-                                    <li><strong>분양시기</strong><span>2022년 11월 25일</span></li>
-                                    <li><strong>위치</strong><span>서울특별시 은평구 증산동 223-15</span></li>
-                                    <li><strong>세대수</strong><span>299세대</span></li>
-                                    <li><strong>문의전화</strong><span>02-375-5600</span></li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li> <a href="">
-                                <div class="area_tit">
-                                    <p>분양중</p>
-                                    <h3>힐스테이트 동탄역 센트릭 </h3>
-                                </div>
-                                <ul class="cover_box">
-                                    <li><strong>분양시기</strong><span>2022년 9월 20일</span></li>
-                                    <li><strong>위치</strong><span>경기도 화성시 오산동 981-1</span></li>
-                                    <li><strong>세대수</strong><span>400실</span></li>
-                                    <li><strong>문의전화</strong><span>1811-9812</span></li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li> <a href="">
-                                <div class="area_tit">
-                                    <p>분양중</p>
-                                    <h3>힐스테이트 대명 센트럴 2차 </h3>
-                                </div>
-                                <ul class="cover_box">
-                                    <li><strong>분양시기</strong><span>2022년 07월</span></li>
-                                    <li><strong>위치</strong><span>대구 남구 대명동 202-1</span></li>
-                                    <li><strong>세대수</strong><span>아파트 977세대, 오피스텔 266실</span></li>
-                                    <li><strong>문의전화</strong><span>1533-3050</span></li>
-                                </ul>
-                            </a>
-                        </li>
-
-                    </ul>
+                </div>
 
             </section>
-            <section class="_section main_benefit">
+            <section class="section main_benefit">
                 <div class="bg02"><span class="blind">deco background02</span></div>
                 <div class="title">
                     <strong>H LIFE SERIES</strong>
@@ -327,10 +322,10 @@
                     </div>
                 </div>
             </section>
-
+            <section id="main_service" class="section"></section>
 
         </main>
-        <footer class="footer">
+        <footer id="footer" class="section fp-auto-height">
             <h2 class="blind">footer</h2>
             <div class="inner">
                 <strong>LIFESTYLE LEADER, HILLSTATE</strong>

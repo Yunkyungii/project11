@@ -1,12 +1,7 @@
 #main_benefit {
     position: relative;
-    overflow: hidden;
 
-    .title {
-        p {
-            margin: 0 0 32px 0;
-        }
-    }
+
 
     .bg02 {
         position: absolute;
@@ -19,32 +14,72 @@
         z-index: -1;
     }
 
-    .benefit_slide {
-        left: calc((100% - 1200px)/2 + 15px);
 
+    .benefit_wrap {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding: 0 0 0 calc((100% - 1440px)/2 - 16px);
 
-        figure {
-            .img_box {
-                margin: 0 0 24px 0;
-                height: 383px;
+        .title {
+            margin: 0 0 0 0;
+            text-align: left;
+
+            p {
+                margin: 0 0 32px 0;
+                width: 70%;
+            }
+        }
+
+        .content {
+            overflow: hidden;
+        }
+
+        .benefit_slide {
+            overflow: hidden;
+
+            .con {
                 position: relative;
+                width: 560px;
+
+                .img_box {
+                    height: 350px;
+
+                    img {
+                        height: 100%;
+                    }
+
+                }
 
 
-                img {
-                    height: 100%;
+
+                h3 {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+
+                    background: rgba($color: $color-white, $alpha: 0.6);
+                    font-size: 20px;
+                    text-align: center;
+                    font-weight: 500;
+                    line-height: 56px;
+                    cursor: pointer;
+                }
+
+                &:hover {
+                    h3 {
+                        line-height: 350px;
+                        transition: 0.4s;
+                    }
                 }
 
             }
 
-            h3 {
-                font-size: 20px;
-                text-align: center;
-                font-weight: 500;
-            }
-
         }
 
+
     }
+
 
     @media(max-width:768px) {
         .benefit_slide {
@@ -69,6 +104,4 @@
 
         }
     }
-
-
 }

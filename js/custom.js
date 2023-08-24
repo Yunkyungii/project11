@@ -17,7 +17,9 @@ $(function () {
                 $('#header').addClass('on')
             }
         },
+
     });
+
 
     $(window).on('scroll', function () {
         let sct = $(window).scrollTop();
@@ -62,17 +64,12 @@ $(function () {
         $(this).addClass('on').siblings().removeClass('on');
     })
 
-
-    //$('.main_content .con_list li').on('click', function (e) {
-    //    e.preventDefault();
-    //    let idx = $(this).index();
-    //    $('.con_box figure').eq(idx).addClass('on').siblings().removeClass('on');
-    //    $(this).addClass('on').siblings().removeClass('on');
-    //s});
+        ;
 
     $('.area_slide').slick({
         arrows: false,
         asNavFor: '.info_slide',
+        //autoplay: true,
     });
 
     $('.tab>li').on('click', function (e) {
@@ -100,15 +97,10 @@ $(function () {
 
     const BenefitSlide = new Swiper('.benefit_slide', {
         loop: true,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        breakpoints: {
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 32,
-            },
-        }
-
+        spaceBetween: 24,
+        slidesPerView: "auto",
+        //centeredSlides: true,
+        //loopedSlides: 1,
 
     });
 

@@ -1,6 +1,5 @@
 #main_content {
     position: relative;
-    padding: 100px 0 0 0;
     overflow: hidden;
 
     .bg01 {
@@ -24,18 +23,8 @@
             position: relative;
             flex: 1;
             height: 480px;
-            padding: 80px 64px;
             overflow: hidden;
 
-            &::after {
-                content: "";
-                display: block;
-                @include center();
-                width: 100%;
-                height: 100%;
-                background-color: #000;
-                opacity: 0.3;
-            }
 
             &:nth-child(1) {
                 background: url(../images/maincon1-img1.jpg)no-repeat center center/cover;
@@ -50,18 +39,22 @@
             }
 
             .slogan {
+                transform: translate(0, 400px);
                 position: relative;
                 z-index: 998;
+                background: rgba($color: #000000, $alpha: 0.7);
+                height: 100%;
+                padding: 24px 24px;
 
                 strong {
+                    color: $color-white;
                     display: block;
-                    font-size: 40px;
-                    color: rgba($color-white, $alpha: 0.5);
-                    margin: 0 0 32px 0;
+                    font-size: 32px;
+                    margin: 0 0 16px 0;
                 }
 
                 span {
-                    font-size: 18px;
+                    font-size: 16px;
                     line-height: 26px;
                     color: rgba($color-white, $alpha: 0.8);
                     visibility: hidden;
@@ -69,17 +62,15 @@
             }
 
             &:hover {
-                flex: 5;
-                transition: 0.5s;
+
 
                 &::after {
                     opacity: 0.5;
                 }
 
                 .slogan {
-                    strong {
-                        color: $color-white;
-                    }
+                    transform: translate(0, 280px);
+                    transition: 0.4s;
 
                     span {
                         visibility: visible;

@@ -403,7 +403,6 @@ body {
 
 #main_content {
   position: relative;
-  padding: 100px 0 0 0;
   overflow: hidden;
 }
 #main_content .bg01 {
@@ -424,20 +423,7 @@ body {
   position: relative;
   flex: 1;
   height: 480px;
-  padding: 80px 64px;
   overflow: hidden;
-}
-#main_content .con_box > figure::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.3;
 }
 #main_content .con_box > figure:nth-child(1) {
   background: url(../images/maincon1-img1.jpg) no-repeat center center/cover;
@@ -449,30 +435,31 @@ body {
   background: url(../images/maincon1-img3.jpg) no-repeat center center/cover;
 }
 #main_content .con_box > figure .slogan {
+  transform: translate(0, 400px);
   position: relative;
   z-index: 998;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  padding: 24px 24px;
 }
 #main_content .con_box > figure .slogan strong {
+  color: #fff;
   display: block;
-  font-size: 40px;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0 0 32px 0;
+  font-size: 32px;
+  margin: 0 0 16px 0;
 }
 #main_content .con_box > figure .slogan span {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
   color: rgba(255, 255, 255, 0.8);
   visibility: hidden;
 }
-#main_content .con_box > figure:hover {
-  flex: 5;
-  transition: 0.5s;
-}
 #main_content .con_box > figure:hover::after {
   opacity: 0.5;
 }
-#main_content .con_box > figure:hover .slogan strong {
-  color: #fff;
+#main_content .con_box > figure:hover .slogan {
+  transform: translate(0, 280px);
+  transition: 0.4s;
 }
 #main_content .con_box > figure:hover .slogan span {
   visibility: visible;
@@ -513,8 +500,8 @@ body {
   position: absolute;
   left: 80px;
   top: 50%;
-  transform: translate(0, -50%);
-  width: 200px;
+  transform: translate(-200%, -50%);
+  width: 160px;
   z-index: 998;
 }
 #main_area .tab_area .tab {
@@ -539,7 +526,19 @@ body {
 #main_area .area_content .left {
   overflow: hidden;
   position: relative;
-  background: #ddd;
+  transform: translate(-100%, 0);
+}
+#main_area .area_content .left h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: #961e1e;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 998;
 }
 #main_area .area_content .left .area_slide .itm {
   position: relative;
@@ -550,7 +549,7 @@ body {
   position: absolute;
   inset: 0 0 0 0;
   background-color: #000;
-  opacity: 0.55;
+  opacity: 0.4;
 }
 #main_area .area_content .left .area_slide .itm01 {
   background: url(../images/mainarea01.jpg) no-repeat center center/cover;
@@ -565,23 +564,77 @@ body {
   background: url(../images/mainarea04.jpg) no-repeat center center/cover;
 }
 #main_area .area_content .right {
+  transform: translate(100%, 0);
   overflow: hidden;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-#main_area .area_content .right h2 {
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-  color: #000;
-  margin: 0 0 80px 0;
+  padding: 0 0 0 64px;
+  background: #8A7251;
 }
 #main_area .area_content .right .area_info {
-  padding: 200px 0;
   overflow: hidden;
-  background: #ddd;
+}
+#main_area .area_content .right .area_info .info_slide {
+  text-align: left;
+}
+#main_area .area_content .right .area_info .info_slide li {
+  color: #111;
+}
+#main_area .area_content .right .area_info .info_slide li .box {
+  width: 64%;
+  text-align: center;
+}
+#main_area .area_content .right .area_info .info_slide li .box p {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 24px;
+  background: #961e1e;
+  border-radius: 16px;
+  color: #fff;
+  margin: 0 0 16px 0;
+}
+#main_area .area_content .right .area_info .info_slide li .box h3 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 64px 0;
+}
+#main_area .area_content .right .area_info .info_slide li .box .cover_box {
+  margin: 0 0 80px 0;
+}
+#main_area .area_content .right .area_info .info_slide li .box .cover_box > li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  line-height: 32px;
+}
+#main_area .area_content .right .area_info .info_slide li .box .cover_box > li strong {
+  font-weight: 700;
+}
+#main_area .area_content .right .area_info .info_slide li .box .link_box {
+  display: flex;
+  font-size: 0;
+  justify-content: space-between;
+}
+#main_area .area_content .right .area_info .info_slide li .box .link_box > li {
+  font-size: 18px;
+}
+#main_area .area_content .right .area_info .info_slide li .box .link_box i {
+  margin: 0 8px 0 0;
+}
+#main_area.active .tab_area {
+  transform: translate(0, -50%);
+  transition: 0.5s 1s;
+}
+#main_area.active .area_content .left {
+  transform: translate(0, 0);
+  transition: 0.5s;
+}
+#main_area.active .area_content .right {
+  transform: translate(0, 0);
+  transition: 0.5s 0.5s;
 }
 @media (max-width: 768px) {
   #main_area h2 {
@@ -618,10 +671,6 @@ body {
 
 #main_benefit {
   position: relative;
-  overflow: hidden;
-}
-#main_benefit .title p {
-  margin: 0 0 32px 0;
 }
 #main_benefit .bg02 {
   position: absolute;
@@ -633,21 +682,50 @@ body {
   background-size: 100% 100%;
   z-index: -1;
 }
-#main_benefit .benefit_slide {
-  left: calc((100% - 1200px) / 2 + 15px);
+#main_benefit .benefit_wrap {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0 0 0 calc((100% - 1440px) / 2 - 16px);
 }
-#main_benefit .benefit_slide figure .img_box {
-  margin: 0 0 24px 0;
-  height: 383px;
+#main_benefit .benefit_wrap .title {
+  margin: 0 0 0 0;
+  text-align: left;
+}
+#main_benefit .benefit_wrap .title p {
+  margin: 0 0 32px 0;
+  width: 70%;
+}
+#main_benefit .benefit_wrap .content {
+  overflow: hidden;
+}
+#main_benefit .benefit_wrap .benefit_slide {
+  overflow: hidden;
+}
+#main_benefit .benefit_wrap .benefit_slide .con {
   position: relative;
+  width: 560px;
 }
-#main_benefit .benefit_slide figure .img_box img {
+#main_benefit .benefit_wrap .benefit_slide .con .img_box {
+  height: 350px;
+}
+#main_benefit .benefit_wrap .benefit_slide .con .img_box img {
   height: 100%;
 }
-#main_benefit .benefit_slide figure h3 {
+#main_benefit .benefit_wrap .benefit_slide .con h3 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
   font-size: 20px;
   text-align: center;
   font-weight: 500;
+  line-height: 56px;
+  cursor: pointer;
+}
+#main_benefit .benefit_wrap .benefit_slide .con:hover h3 {
+  line-height: 350px;
+  transition: 0.4s;
 }
 @media (max-width: 768px) {
   #main_benefit .benefit_slide {

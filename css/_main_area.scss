@@ -1,199 +1,142 @@
 #main_area {
     position: relative;
 
-    .tab_area {
+    h2 {
         position: absolute;
-        left: 80px;
-        top: 50%;
-        transform: translate(-200%, -50%);
-        width: 160px;
+        top: 100px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 40px;
+        font-weight: 700;
         z-index: 998;
-
-        .tab {
-            display: grid;
-            grid-template-rows: repeat(4, 1fr);
-            gap: 12px;
-
-            >li {
-                border: 2px solid transparent;
+        color: rgba($color-white, $alpha: 0.7);
+        text-align: center;
+    }
 
 
-                img {
-                    height: 100%;
-                }
+    .area_slide {
 
-                &.on {
-                    border: 2px solid $color-white;
-                }
+
+        .itm {
+            position: relative;
+            height: 100vh;
+
+            &::after {
+                content: "";
+                display: block;
+                @include center();
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                opacity: 0.55;
+            }
+
+            .m_box {
+                display: none;
             }
         }
 
+        .itm01 {
+            background: url(../images/mainarea01.jpg)no-repeat center center/cover;
+        }
+
+        .itm02 {
+            background: url(../images/mainarea02.jpg)no-repeat center center/cover;
+        }
+
+        .itm03 {
+            background: url(../images/mainarea03.jpg)no-repeat center center/cover;
+        }
+
+        .itm04 {
+            background: url(../images/mainarea04.jpg)no-repeat center center/cover;
+        }
 
 
     }
 
-    .area_content {
-        position: relative;
+    .area_info {
+        position: absolute;
+        inset: 0 0 0 0;
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        z-index: 998;
+        color: rgba($color-white, $alpha: 0.7);
 
-        .left {
-            overflow: hidden;
+        >li {
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            align-items: end;
             position: relative;
-            transform: translate(-100%, 0);
+            text-align: center;
+            cursor: pointer;
 
-            h2 {
+            .area_tit {
                 position: absolute;
-                left: 50%;
+                width: 100%;
                 top: 50%;
+                left: 50%;
                 transform: translate(-50%, -50%);
-
-                font-size: 48px;
-                font-weight: 700;
                 text-align: center;
-                color: $color-main;
-                text-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
-                z-index: 998;
+
+                p {
+                    display: inline-block;
+                    font-size: 15px;
+                    font-weight: 500;
+                    background: rgba($color-white, $alpha: 0.7);
+                    color: $color-sub;
+                    border-radius: 20px;
+                    padding: 10px 25px;
+                    margin: 0 0 16px 0;
+                }
+
+                h3 {
+                    font-size: 24px;
+                }
             }
 
-            .area_slide {
-
-
-                .itm {
-                    position: relative;
-                    height: 100vh;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        inset: 0 0 0 0;
-
-                        background-color: #000;
-                        opacity: 0.4;
-                    }
-
-                }
-
-                .itm01 {
-                    background: url(../images/mainarea01.jpg)no-repeat center center/cover;
-                }
-
-                .itm02 {
-                    background: url(../images/mainarea02.jpg)no-repeat center center/cover;
-                }
-
-                .itm03 {
-                    background: url(../images/mainarea03.jpg)no-repeat center center/cover;
-                }
-
-                .itm04 {
-                    background: url(../images/mainarea04.jpg)no-repeat center center/cover;
-                }
-
-
+            .cover_box {
+                display: none;
             }
-        }
 
-        .right {
-            transform: translate(100%, 0);
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 0 0 64px;
-            background: $color-sub;
+            &:hover {
+                color: $color-white;
+                background: rgba($color: $color-main, $alpha: 0.3);
 
-            .area_info {
-                overflow: hidden;
+                .area_tit {
+                    transform: translate(-50%, -60px);
+                    transition: 0.5s;
+                }
 
-                .info_slide {
-                    text-align: left;
+                .cover_box {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 30%;
+                    transform: translate(-50%, 0);
+                    width: auto;
+                    transition: 0.5s;
 
                     li {
-                        color: #111;
+                        width: 300px;
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 5px 0;
 
-                        .box {
-                            width: 64%;
-                            text-align: center;
+                        strong {
+                            font-weight: 500;
+                        }
 
-                            p {
-                                display: inline-block;
-                                font-size: 16px;
-                                font-weight: 600;
-                                padding: 8px 24px;
-                                background: $color-main;
-                                border-radius: 16px;
-                                color: $color-white;
-                                margin: 0 0 16px 0;
-                            }
-
-                            h3 {
-                                font-size: 32px;
-                                font-weight: 600;
-                                margin: 0 0 64px 0;
-                            }
-
-                            .cover_box {
-                                margin: 0 0 80px 0;
-
-                                >li {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    font-size: 18px;
-                                    line-height: 32px;
-
-                                    strong {
-                                        font-weight: 700;
-                                    }
-                                }
-                            }
-
-                            .link_box {
-                                display: flex;
-                                font-size: 0;
-
-                                justify-content: space-between;
-
-                                >li {
-                                    //  flex: 1;
-                                    font-size: 18px;
-                                }
-
-                                i {
-                                    margin: 0 8px 0 0;
-                                }
-                            }
+                        span {
+                            text-align: right;
+                            font-weight: 300;
                         }
                     }
                 }
-
-
-
-            }
-        }
-    }
-
-    &.active {
-        .tab_area {
-            transform: translate(0, -50%);
-            transition: 0.5s 1s;
-        }
-
-        .area_content {
-            .left {
-                transform: translate(0, 0);
-                transition: 0.5s;
             }
 
-            .right {
-                transform: translate(0, 0);
-                transition: 0.5s 0.5s;
-            }
         }
 
     }
-
 
     @media(max-width:768px) {
         h2 {

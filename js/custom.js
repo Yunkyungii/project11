@@ -2,7 +2,7 @@ $(function () {
 
 
     $('#main').fullpage({
-        anchors: ['main', 'sub01', 'sub02'],
+        anchors: ['main', 'sc01', 'sc02', 'sc03', 'sc04'],
         navigation: true,
         css3: false,
         responsiveWidth: 700,
@@ -62,30 +62,29 @@ $(function () {
     $('.arrows>*').on('click', function (e) {
         e.preventDefault();
         $(this).addClass('on').siblings().removeClass('on');
+    });
+
+
+    const AreaSlide = new Swiper('.area_slide', {
+        loop: true,
+        effect: "fade",
+    });
+
+
+    $('.area_info li').on('mouseenter', function (e) {
+        e.preventDefault();
+        const idx = $(this).index();
+        $(this).addClass('on').siblings().removeClass('on')
+        AreaSlide.slideTo(idx);
     })
 
-        ;
-
-    $('.area_slide').slick({
-        arrows: false,
-        asNavFor: '.info_slide',
-        //autoplay: true,
-    });
-
-    $('.tab>li').on('click', function (e) {
-        e.preventDefault();
-        let idx = $(this).index();
-        $('.area_slide').slick('slickGoTo', idx);
-        $(this).addClass('on').siblings().removeClass('on');
-    });
-
-    $('.area_slide').on('init afterChange', function (e, s, c) {
-        const current = $('.area_slide .slick-current');
-        current.addClass('on').siblings().removeClass('on');
-        $('.tab>li').eq(0).addClass('on');
-        $('.tab>li').eq(c).addClass('on')
-            .siblings().removeClass('on');
-    });
+    // $('.area_slide').on('init afterChange', function (e, s, c) {
+    //     const current = $('.area_slide .slick-current');
+    //     current.addClass('on').siblings().removeClass('on');
+    //     $('.tab>li').eq(0).addClass('on');
+    //     $('.tab>li').eq(c).addClass('on')
+    //         .siblings().removeClass('on');
+    // });
 
 
     $('.info_slide').slick({

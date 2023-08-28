@@ -1,0 +1,163 @@
+#main_service {
+    background: #efefef;
+
+    .inner {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+
+        >* {
+            flex: 1;
+        }
+
+        .service_box {
+            position: relative;
+            height: 520px;
+            background: $color-white;
+            display: flex;
+            flex-direction: column;
+            padding: 56px 40px;
+            gap: 16px;
+
+
+            h2 {
+                font-size: 32px;
+                line-height: 38px;
+                font-weight: 500;
+
+                color: #222;
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: 300;
+                margin: 0 0 auto 0;
+            }
+
+            span {
+                text-decoration: underline;
+            }
+
+            &:hover {
+                transform: translateY(-16px);
+                box-shadow: 10px 20px 20px rgba($color: #000000, $alpha: 0.1);
+                transition: 0.4s;
+            }
+        }
+
+        .service_tit {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 0 0 40px;
+            flex: 1.5;
+
+            h2 {
+                font-size: 48px;
+                line-height: 56px;
+                font-weight: 500;
+                margin: 0 0 24px 0;
+                color: $color-dc;
+            }
+
+            p {
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 26px;
+                margin: 0 0 120px 0;
+            }
+
+            .link_btn {
+                span {
+                    a {
+                        position: relative;
+                        @include btn();
+                        z-index: 998;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: $color-main;
+                            z-index: -1;
+                            transform: scaleX(0);
+                            transform-origin: left;
+                        }
+
+                        &:hover {
+                            color: $color-white;
+                            transition: 0.3s;
+
+                            &::after {
+                                transform: scaleX(1);
+                                transition: 0.3s ease-out;
+                            }
+                        }
+
+                    }
+
+
+
+                }
+            }
+
+        }
+
+    }
+
+    @media (max-width: 768px) {
+        padding: 80px 0;
+
+        .inner {
+            flex-direction: column;
+            gap: 16px;
+
+            .service_box {
+                max-height: 520px;
+                height: auto;
+                padding: 32px 32px;
+                gap: 8px;
+
+                h2 {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+
+                p {
+                    font-size: 16px;
+                    margin: 0 0 24px 0;
+                }
+
+                span {
+                    font-size: 14px;
+                }
+
+            }
+
+            .service_tit {
+                flex: 1;
+                text-align: center;
+                margin: 0 0 0 0;
+                padding: 24px 0 0 0;
+
+                h2 {
+                    font-size: 32px;
+                    line-height: 40px;
+                    margin: 0 0 16px 0;
+                }
+
+                p {
+                    font-size: 18px;
+                    font-weight: 300;
+                    line-height: 24px;
+                    margin: 0 0 40px 0;
+                }
+            }
+        }
+    }
+}

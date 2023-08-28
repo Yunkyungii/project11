@@ -8,6 +8,7 @@
 
     &:hover {
         background: $color-white;
+        border-bottom: 1px solid #ddd;
 
         .header_container {
             color: $color-dc;
@@ -16,6 +17,27 @@
                 background: url(../images/logo-red.png) no-repeat center center/contain;
             }
 
+            .gnb {
+                .dth1 {
+                    >li {
+                        .dth2 {
+                            display: block;
+                            opacity: 1;
+                            transition: 0.3s;
+                            top: 120px;
+                        }
+                    }
+
+                }
+
+            }
+
+
+        }
+
+        &::after {
+            height: 240px;
+            transition: 0.2s;
         }
     }
 
@@ -30,6 +52,16 @@
                 background: url(../images/logo-red.png) no-repeat center center/contain;
             }
         }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 101px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: $color-white;
     }
 
     .header_container {
@@ -54,15 +86,18 @@
         .gnb {
             .dth1 {
                 display: flex;
-                gap: 50px;
+                gap: 20px;
 
-                li {
+                >li {
+                    position: relative;
                     text-align: center;
+                    width: 120px;
+                    z-index: 998;
 
-                    a {
+                    >a {
                         line-height: 100px;
                         display: block;
-                        width: 75px;
+                        width: 100%;
                         position: relative;
                         font-size: 20px;
                         font-weight: 500;
@@ -86,7 +121,20 @@
                     }
 
                     .dth2 {
+                        opacity: 0;
                         display: none;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        width: 100%;
+                        height: 0;
+
+                        >li {
+                            text-align: center;
+                            color: $color-body;
+                            padding: 10px 0;
+                        }
                     }
                 }
             }
@@ -167,9 +215,17 @@
             top: 115px;
             display: block;
             padding: 8px;
-            font-size: 24px;
             background: $color-white;
             border-radius: 4px;
+
+            span {
+                display: block;
+                font-size: 0;
+                width: 100%;
+                height: 1px;
+                background: $color-dc;
+            }
+
         }
     }
 }

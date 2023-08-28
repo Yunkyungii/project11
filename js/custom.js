@@ -2,6 +2,7 @@ $(function () {
 
 
     $('#main').fullpage({
+        responsiveWidth: 1000,
         anchors: ['main', 'sc01', 'sc02', 'sc03', 'sc04'],
         navigation: true,
         css3: false,
@@ -9,40 +10,29 @@ $(function () {
         'afterLoad': function (anchorLink, index) {
             if (index == 1) {
                 $('#header').removeClass('on');
+                $('.top_btn').hide()
             }
+            else {
+                $('#header').addClass('on');
+                $('.top_btn').show()
+            }
+
         },
         onLeave: function (idx, nidx, dir) {
 
-            if (dir == 'down') {
-                $('#header').addClass('on')
+            if (dir == 'up') {
+                $('#header').slideDown(400)
             }
+            else {
+                $('#header').slideUp()
+            }
+
         },
 
     });
 
 
-    $(window).on('scroll', function () {
-        let sct = $(window).scrollTop();
-        sct > 0
-            ? $('.header').addClass('on')
-            : $('.header').removeClass('on')
-    });
 
-    $(window).on('scroll', function () {
-        let sct = $(window).scrollTop();
-        $('.scr_ev').each(function () {
-            if (sct + $(window).innerHeight() - 200 > $(this).offset().top) {
-                $(this).addClass('on')
-            }
-            else {
-                $(this).removeClass('on')
-            };
-
-        })
-
-
-
-    });
 
     const MainSlide = new Swiper('.main_slide', {
         loop: true,
@@ -68,6 +58,9 @@ $(function () {
     const AreaSlide = new Swiper('.area_slide', {
         loop: true,
         effect: "fade",
+        pagination: {
+            el: "#main_area .dots",
+        },
     });
 
 
@@ -100,8 +93,37 @@ $(function () {
         slidesPerView: "auto",
         //centeredSlides: true,
         //loopedSlides: 1,
+        pagination: {
+            el: ".title .page",
+            type: "fraction",
+        },
+        // pagination: {
+        //     el: "#main_benefit .title .bar",
+        //     type: "progressbar",
+        // }, 슬라이드 하나당 하나의 pagination 제공 -> 슬라이드 2개를 만들것
+        navigation: {
+            nextEl: "#main_benefit .title .right",
+            prevEl: "#main_benefit .title .left",
+        },
 
     });
+
+    var barSwiper = new Swiper(".benefit_slide", {
+        loop: true,
+        spaceBetween: 24,
+        slidesPerView: "auto",
+        pagination: {
+            el: "#main_benefit .title .bar",
+            type: "progressbar",
+        },
+    });
+
+    BenefitSlide.controller.control = barSwiper;
+
+    $('#footer .family_site .down').on('click', function (e) {
+        e.preventDefault();
+        $('.family_site').toggleClass('on');
+    })
 
 
     $('.top_btn').on('click', function () {
